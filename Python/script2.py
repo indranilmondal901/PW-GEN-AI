@@ -10,7 +10,10 @@
 9. f-strings
 10. Doc strings
 '''
-# --------- Variables and Data Types in Python ---------
+
+# ============================================================================
+# Variables in Python 
+# ============================================================================
 '''
 # 1. variable
 
@@ -32,7 +35,12 @@ False <<-->> <class 'bool'>
 
 print(age+10); # ✅ - 33
 # print(age+"10"); #TypeError: unsupported operand type(s) for +: 'int' and 'str'
+'''
 
+# ============================================================================
+# Data Types in Python 
+# ============================================================================
+'''
 # Data Types:
 a. numerical_data_types = [int,float,complex]
 b. dictionary_data_types = [dict]
@@ -50,25 +58,29 @@ vi. tuple - (1,2,3)
 vii. set - {1,2,3}
 viii. dict - {"name":"indra","age":25}
 ix. complex - 1+2j
-
 '''
-# --------- Type Casting in Python ---------
+
+# ============================================================================
+# Type Casting in Python
+# ============================================================================
 
 '''
 # 3. User Input
 # 4. Type Conversion
 
-name=input("Enter your name: ") # input() function is used to take input from user
+# Type Casting --> Converting a value from one data type to another.
+
+name=input("Enter your name: ") # input() function is used to take input from user as STRING datatype
 city=input("Enter your city: ")
 hobby=input("Enter your hobby: ")
 print("Hello",name,"from",city,"who likes",hobby) 
 
-Input():
-It always takes input from user in the form of string. So, if you want to take input of any other data type, you need to convert it into that data type using type casting.
+# Input():
+# It always takes input from user in the form of string. So, if you want to take input of any other data type, you need to convert it into that data type using type casting.
 
 number_first=input("Enter first number: ") # input() function is used to take input from user
 number_second=input("Enter second number: ")
-print("Sum of two numbers is: ",int(number_first)+int(number_second)) # type casting from string to int
+print("Sum of two numbers is: ",int(number_first)+int(number_second)) # TYPE CASTING from string to int
 
 user_input=input("Enter string number: ")
 # print type of user_input
@@ -79,16 +91,20 @@ user_input_float=float(user_input) # type casting from string to float
 print(type(user_input_float)) # <class 'float'>
 
 '''
-# --------- Operators in Python ---------
+# ============================================================================
+# Operators in Python 
+# ============================================================================
 '''
-Operators:
-i. Arithmetic Operators
-ii. Assignment Operators
-iii. Comparison Operators
-iv. Logical Operators
-v. Bitwise Operators
-
+# Operators:
 # i. Arithmetic Operators
+# ii. Assignment Operators
+# iii. Comparison Operators
+# iv. Logical Operators
+# v. Bitwise Operators
+
+# ============================================================================
+# i. Arithmetic Operators
+# ============================================================================
 a=10
 b=3
 print("Addition: ",a+b) # 13
@@ -99,7 +115,9 @@ print("Modulus: ",a%b) # 1
 print("Exponentiation: ",a**b) # 1000 --> 10^3
 print("Floor Division: ",a//b) # 3
 
+# ============================================================================
 # ii. Assignment Operators
+# ============================================================================
 a=10
 b=3
 a+=b # a=a+b --> 10+3=13
@@ -119,7 +137,9 @@ a=10
 a//=b # a=a//b --> 10//3=3
 print(a) # 3
 
-#iii. Comparison Operators
+# ============================================================================
+# iii. Comparison Operators
+# ============================================================================
 a=10
 b=3
 print("Equal: ",a==b) # False
@@ -129,8 +149,9 @@ print("Less Than: ",a<b) # False
 print("Greater Than or Equal: ",a>=b) # True
 print("Less Than or Equal: ",a<=b) # False
 
-
-#iv. Logical Operators
+# ============================================================================
+# iv. Logical Operators
+# ============================================================================
 a=10
 b=3
 # and, or, not
@@ -141,36 +162,36 @@ b=3
 print("Logical AND: ",a>5 and b<5) # True 
 print("Logical OR: ",a>5 or b>5) # True
 print("Logical NOT: ",not(a>5)) # False
-
-
 '''
-
-# --------- Strings in Python ---------
+# ============================================================================
+# Strings in Python 
+# ============================================================================
 '''
 # Strings are a sequence of characters enclosed in single quotes, double quotes or triple quotes.
 # Strings are immutable, which means once a string is created, it cannot be changed.
 # Strings can be indexed and sliced.
 '''
-
-# ---------- String Methods in Python ---------
+# ============================================================================
+# String Methods in Python
+# ============================================================================
 '''
 # String Methods (Important ones):
-1. len() - returns the length of the string
-2. upper() - converts the string to uppercase
-3. lower() - converts the string to lowercase
-4. strip() - removes the leading and trailing whitespaces
-5. replace() - replaces a substring with another substring
-6. split() - splits the string into a list of substrings
-7. join() - joins a list of strings into a single string
-8. find() - returns the index of the first occurrence of a substring
-9. count() - returns the number of occurrences of a substring
-10. isalpha() - returns True if all characters in the string are alphabetic
-11. isdigit() - returns True if all characters in the string are digits
-12. isspace() - returns True if all characters in the string are whitespace
-13. startswith() - returns True if the string starts with a specified substring
-14. endswith() - returns True if the string ends with a specified substring
-15. capitalize() - capitalizes the first character of the string
-16. title() - converts the string to title case
+# 1. len() - returns the length of the string
+# 2. upper() - converts the string to uppercase
+# 3. lower() - converts the string to lowercase
+# 4. strip() - removes the leading and trailing whitespaces
+# 5. replace() - replaces a substring with another substring
+# 6. split() - splits the string into a list of substrings
+# 7. join() - joins a list of strings into a single string
+# 8. find() - returns the index of the first occurrence of a substring
+# 9. count() - returns the number of occurrences of a substring
+# 10. isalpha() - returns True if all characters in the string are alphabetic
+# 11. isdigit() - returns True if all characters in the string are digits
+# 12. isspace() - returns True if all characters in the string are whitespace
+# 13. startswith() - returns True if the string starts with a specified substring
+# 14. endswith() - returns True if the string ends with a specified substring
+# 15. capitalize() - capitalizes the first character of the string
+# 16. title() - converts the string to title case
 
 word = "hello world Python"
 print("Length of the string: ",len(word)) # 18 --> it will return the length of the string
@@ -198,8 +219,9 @@ print("Characters from index 5 to 10 with step 2: ",word[5:10:2]) #  ol
 print("Reverse the string: ",word[::-1]) # dlrow olleh
 
 '''
-
-# --------- f-strings in Python ---------
+# ============================================================================
+# f-strings in Python 
+# ============================================================================
 '''
 # f-strings (formatted string literals) are a way to embed expressions inside string literals, using curly braces {}. They were introduced in Python 3.6 and provide a more readable and concise way to format strings.
 
@@ -221,25 +243,28 @@ print(f"{ans:.1f}")  # 3.3
 print("{:.2f}".format(ans)) # 3.33
 
 '''
-# --------- Doc strings in Python ---------
+
+# ============================================================================
+# Doc strings in Python
+# ============================================================================
 '''
 # Docstrings (documentation strings) are a way to document your code in Python. They are written using triple quotes (""" or [['''''']) and are placed at the beginning of a module, class, or function. Docstrings provide a convenient way to associate #documentation with Python code.
 
 #Example of docstring in a function:
-# def add_numbers(a, b):
-#     """
-#     This function takes two numbers as input and returns their sum.
+def add_numbers(a, b):
+    """
+    This function takes two numbers as input and returns their sum.
     
-#     Parameters:
-#     a (int or float): The first number.
-#     b (int or float): The second number.
+    Parameters:
+    a (int or float): The first number.
+    b (int or float): The second number.
     
-#     Returns:
-#     int or float: The sum of the two numbers.
-#     """
-#     return a + b
+    Returns:
+    int or float: The sum of the two numbers.
+    """
+    return a + b
 
-# print(add_numbers.__doc__)  # Print the docstring of the function
-# print(add_numbers(5, 10))  # Output: 15
+print(add_numbers.__doc__)  # Print the docstring of the function
+print(add_numbers(5, 10))  # Output: 15
 
 '''
