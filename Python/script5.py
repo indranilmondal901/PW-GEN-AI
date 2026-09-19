@@ -7,10 +7,6 @@
 6. File Handling - appending file
 7. Built in Python Library
 8. if __name__ = "__main__"
-1.5 - l
-0.5-p
-0.5- com
-0.5- q n a
 """
 
 # ============================================================================
