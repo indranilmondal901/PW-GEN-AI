@@ -1,0 +1,204 @@
+import numpy as np
+
+# ------------------------------------------------------------
+# 1. Creating arrays
+# ------------------------------------------------------------
+arr = np.array([10, 20, 30, 40, 50])
+
+print("\nNumPy array:")
+print(arr)
+
+# ------------------------------------------------------------
+# 2. 2D array
+# ------------------------------------------------------------
+matrix = np.array([
+    [1, 2, 3],
+    [4, 5, 6]
+])
+
+print("\n2D array:")
+print(matrix)
+
+# ------------------------------------------------------------
+# 3. dtype and shape
+# ------------------------------------------------------------
+print("\nData type:")
+print(arr.dtype)
+
+print("\nShape:")
+print(matrix.shape)
+
+# ------------------------------------------------------------
+# 4. arange()
+# ------------------------------------------------------------
+numbers = np.arange(0, 10, 2)
+
+print("\nUsing arange:")
+print(numbers)
+
+# ------------------------------------------------------------
+# 5. linspace()
+# ------------------------------------------------------------
+values = np.linspace(0, 1, 5)
+
+print("\nUsing linspace:")
+print(values)
+
+# ------------------------------------------------------------
+# 6. zeros()
+# ------------------------------------------------------------
+zeros = np.zeros((2, 3))
+
+print("\nZeros:")
+print(zeros)
+
+# ------------------------------------------------------------
+# 7. ones()
+# ------------------------------------------------------------
+ones = np.ones((2, 3))
+
+print("\nOnes:")
+print(ones)
+
+# ------------------------------------------------------------
+# 8. full()
+# ------------------------------------------------------------
+full_array = np.full((2, 3), 7)
+
+print("\nFull:")
+print(full_array)
+
+# ------------------------------------------------------------
+# 9. reshape()
+# ------------------------------------------------------------
+numbers = np.arange(1, 13)
+reshaped = numbers.reshape(3, 4)
+
+print("\nReshaped:")
+print(reshaped)
+
+# ------------------------------------------------------------
+# 10. Indexing
+# ------------------------------------------------------------
+print("\nFirst element:")
+print(arr[0])
+
+print("\nLast element:")
+print(arr[-1])
+
+print("\n2D element:")
+print(matrix[1, 2])
+
+# ------------------------------------------------------------
+# 11. Slicing
+# ------------------------------------------------------------
+print("\nSlice:")
+print(arr[1:4])
+
+# ------------------------------------------------------------
+# 12. Mathematical operations
+# ------------------------------------------------------------
+a = np.array([10, 20, 30])
+b = np.array([1, 2, 3])
+
+print("\nAddition:")
+print(a + b)
+
+print("\nMultiplication:")
+print(a * b)
+
+print("\nScalar multiplication:")
+print(a * 2)
+
+# ------------------------------------------------------------
+# 13. sum(), mean(), min(), max()
+# ------------------------------------------------------------
+scores = np.array([70, 85, 90, 65, 95])
+
+print("\nSum:", np.sum(scores))
+print("Mean:", np.mean(scores))
+print("Minimum:", np.min(scores))
+print("Maximum:", np.max(scores))
+
+# ------------------------------------------------------------
+# 14. std() and median()
+# ------------------------------------------------------------
+print("\nStandard deviation:", np.std(scores))
+print("Median:", np.median(scores))
+
+# ------------------------------------------------------------
+# 15. Sorting
+# ------------------------------------------------------------
+unsorted = np.array([50, 10, 90, 30, 70])
+
+print("\nSorted:")
+print(np.sort(unsorted))
+
+# ------------------------------------------------------------
+# 16. Concatenate
+# ------------------------------------------------------------
+first = np.array([1, 2, 3])
+second = np.array([4, 5, 6])
+
+combined = np.concatenate((first, second))
+
+print("\nConcatenated:")
+print(combined)
+
+# ------------------------------------------------------------
+# 17. Unique values
+# ------------------------------------------------------------
+values = np.array([1, 2, 2, 3, 3, 3, 4])
+
+print("\nUnique values:")
+print(np.unique(values))
+
+# ------------------------------------------------------------
+# 18. Conditional selection
+# ------------------------------------------------------------
+scores = np.array([45, 72, 88, 39, 95])
+
+passed = scores[scores >= 50]
+
+print("\nPassed scores:")
+print(passed)
+
+# ------------------------------------------------------------
+# 19. Random numbers
+# ------------------------------------------------------------
+random_numbers = np.random.randint(1, 101, 5)
+
+print("\nRandom numbers:")
+print(random_numbers)
+
+# ------------------------------------------------------------
+# 20. Dot product
+# ------------------------------------------------------------
+weights = np.array([0.2, 0.3, 0.5])
+features = np.array([10, 20, 30])
+
+weighted_score = np.dot(weights, features)
+
+print("\nDot product:")
+print(weighted_score)
+
+# ------------------------------------------------------------
+# 21. NumPy mini practical example
+# ------------------------------------------------------------
+marks = np.array([
+    [80, 70, 90],
+    [60, 75, 85],
+    [95, 88, 92]
+])
+
+print("\nMarks:")
+print(marks)
+
+student_averages = np.mean(marks, axis=1)
+subject_averages = np.mean(marks, axis=0)
+
+print("\nAverage for each student:")
+print(student_averages)
+
+print("\nAverage for each subject:")
+print(subject_averages)
