@@ -296,7 +296,7 @@ as simply:
 Therefore:
 """
 
-single_item = ("Python")
+single_item = "Python"
 
 print(type(single_item))
 # <class 'str'>
@@ -622,7 +622,562 @@ Main idea:
     Tuples are generally used for fixed collections.
 """
 
+# ============================================================================
+
+# 19. TUPLE UNPACKING
 
 # ============================================================================
-# END OF TUPLE NOTES
+
+"""
+Tuple Unpacking means taking individual values from a tuple and assigning
+those values to separate variables.
+
+Example:
+
+```
+student = ("Harsh", 25)
+```
+
+Instead of accessing the values using indexes:
+
+```
+student[0]
+student[1]
+```
+
+We can directly unpack the tuple:
+
+```
+name, age = student
+```
+
+Now:
+
+```
+name -> "Harsh"
+age  -> 25
+```
+
+"""
+
+# ============================================================================
+# 19.1 TUPLE UNPACKING
+# ============================================================================
+
+"""
+Basic Example:
+
+```
+student = ("Harsh", 25)
+name, age = student
+```
+Here:
+```
+student contains 2 values:
+    ("Harsh", 25)
+We have 2 variables:
+    name
+    age
+```
+Python assigns the values according to their position:
+```
+"Harsh" -> name
+25      -> age
+```
+"""
+student = ("Harsh", 25)
+name, age = student
+
+print(name)
+# Harsh
+print(age)
+# 25
+"""
+Another Example:
+```
+colors = ("red", "green", "yellow")
+color1, color2, color3 = colors
+```
+The values are assigned according to their position.
+"""
+
+colors = ("red", "green", "yellow")
+
+color1, color2, color3 = colors
+
+print(color1)
+
+# red
+
+print(color2)
+
+# green
+
+print(color3)
+
+# yellow
+
+# ============================================================================
+
+# 19.2 TUPLE UNPACKING WITH A FUNCTION
+
+# ============================================================================
+
+"""
+A function can return multiple values.
+
+When multiple values are returned:
+
+```
+return (name, age)
+```
+
+the values can be received as a tuple.
+
+Example:
+
+```
+def my_dummy_func():
+
+    name = input("Pls enter your name :")
+    age = input("Pls enter your age:")
+
+    return (name, age)
+```
+
+The function returns:
+
+```
+(name, age)
+```
+
+We can directly unpack the returned tuple:
+
+```
+name, age = my_dummy_func()
+```
+
+"""
+
+
+def my_dummy_func():
+
+    name = input("Pls enter your name :")
+
+    age = input("Pls enter your age:")
+
+    return (name, age)
+
+
+name, age = my_dummy_func()
+
+print(f"hi {name}, your age is {age}")
+
+"""
+Example:
+
+```
+Pls enter your name : Indranil
+Pls enter your age: 29
+```
+
+Output:
+
+```
+hi Indranil, your age is 29
+```
+
+The important part is:
+
+```
+return (name, age)
+```
+
+and:
+
+```
+name, age = my_dummy_func()
+```
+
+The returned tuple is unpacked into:
+
+```
+name
+age
+```
+
+"""
+
+# ============================================================================
+
+# 19.3 HOW TUPLE UNPACKING WORKS
+
+# ============================================================================
+
+"""
+Suppose we have:
+
+```
+student = ("Indranil", "29")
+```
+
+and:
+
+```
+name, age = student
+```
+
+Python assigns the values based on their position.
+
+Conceptually:
+
+```
+("Indranil", "29")
+      |          |
+      |          |
+      v          v
+    name        age
+```
+
+Therefore:
+
+```
+name = "Indranil"
+age  = "29"
+```
+
+Another way to understand it:
+
+```
+student = ("Indranil", "29")
+
+name, age = student
+```
+
+means:
+
+```
+name = student[0]
+age  = student[1]
+```
+
+Tuple unpacking simply allows us to do this directly.
+"""
+
+student = ("Indranil", "29")
+
+name, age = student
+
+print(f"Name: {name}")
+
+# Name: Indranil
+
+print(f"Age: {age}")
+
+# Age: 29
+
+"""
+Position is important.
+
+Example:
+
+```
+data = ("Python", 100, True)
+
+language, number, status = data
+```
+
+Assignment:
+
+```
+"Python" -> language
+100      -> number
+True     -> status
+```
+
+"""
+
+data = ("Python", 100, True)
+
+language, number, status = data
+
+print(language)
+
+# Python
+
+print(number)
+
+# 100
+
+print(status)
+
+# True
+
+# ============================================================================
+
+# 19.4 IMPORTANT RULE OF UNPACKING
+
+# ============================================================================
+
+"""
+The number of variables should normally match the number of values
+being unpacked.
+
+Example:
+
+```
+data = ("Python", 100)
+```
+
+There are:
+
+```
+2 values
+```
+
+So we need:
+
+```
+2 variables
+```
+
+Correct:
+
+```
+name, number = data
+```
+
+If the number of variables and values does not match,
+Python raises a ValueError.
+"""
+
+data = ("Python", 100)
+
+name, number = data
+
+print(name)
+
+# Python
+
+print(number)
+
+# 100
+
+"""
+Correct:
+
+```
+data = ("Python", 100, True)
+
+language, number, status = data
+```
+
+3 values
+3 variables
+
+This works.
+"""
+
+data = ("Python", 100, True)
+
+language, number, status = data
+
+print(language)
+
+# Python
+
+print(number)
+
+# 100
+
+print(status)
+
+# True
+
+# ============================================================================
+
+# 19.5 UNPACKING WITH TOO FEW OR TOO MANY VARIABLES
+
+# ============================================================================
+
+"""
+If there are MORE values than variables:
+
+```
+data = ("Python", 100, True)
+
+name, number = data
+```
+
+There are:
+
+```
+3 values
+```
+
+but only:
+
+```
+2 variables
+```
+
+Python cannot assign all 3 values.
+
+This produces:
+
+```
+ValueError: too many values to unpack
+```
+
+"""
+
+# data = ("Python", 100, True)
+
+# name, number = data
+
+"""
+If there are FEWER values than variables:
+
+```
+data = ("Python", 100)
+
+name, number, status = data
+```
+
+There are:
+
+```
+2 values
+```
+
+but:
+
+```
+3 variables
+```
+
+Python cannot provide a value for every variable.
+
+This produces:
+
+```
+ValueError: not enough values to unpack
+```
+
+"""
+
+# data = ("Python", 100)
+
+# name, number, status = data
+
+"""
+IMPORTANT:
+
+The examples above are commented out intentionally.
+
+If you uncomment them, Python will raise ValueError.
+
+Correct:
+
+```
+2 values -> 2 variables
+
+data = ("Python", 100)
+name, number = data
+```
+
+"""
+
+# ============================================================================
+
+# 19.6 TUPLE UNPACKING SUMMARY
+
+# ============================================================================
+
+"""
+Tuple:
+
+```
+student = ("Harsh", 25)
+
+    |
+    v
+```
+
+Tuple Unpacking:
+
+```
+name, age = student
+
+    |
+    v
+
+name = "Harsh"
+age  = 25
+```
+
+Function Example:
+
+```
+def my_dummy_func():
+
+    name = input("Pls enter your name :")
+    age = input("Pls enter your age:")
+
+    return (name, age)
+
+    |
+    v
+
+name, age = my_dummy_func()
+```
+
+Mind Map:
+
+```
+                TUPLE UNPACKING
+
+                       |
+      --------------------------------
+      |              |               |
+   Basic          Function       Position
+  Unpacking       Return         Based
+      |              |               |
+      v              v               v
+name, age =     return tuple     value 1 ->
+   student          |             variable 1
+                    |
+                    v
+               name, age =      value 2 ->
+               my_dummy_func()    variable 2
+```
+
+IMPORTANT POINTS:
+
+1. Tuple unpacking assigns tuple values to separate variables.
+
+2. Values are assigned according to their position.
+
+3. The number of variables should normally match the number of values.
+
+4. A function can return multiple values as a tuple.
+
+5. The returned tuple can be directly unpacked.
+
+6. Incorrect number of variables/values produces ValueError.
+
+Example:
+
+```
+data = ("Python", 100)
+
+name, number = data
+```
+
+"""
+
+# ============================================================================
+
+# END OF TUPLE UNPACKING
+
 # ============================================================================
